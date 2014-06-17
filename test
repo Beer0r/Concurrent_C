@@ -1,0 +1,70 @@
+#!/bin/bash
+PORT="8080"
+IP="127.0.0.1"
+
+#Create some files
+echo -e "------ Create file1: ------"
+echo -e "CREATE file1 5\ntest" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Create file2: ------"
+echo -e "CREATE file2 100\ntralalalala.... usw tralalallaa" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Create file3: ------"
+echo -e "CREATE file3 10\nblablabla" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Create file4: ------"
+echo -e "CREATE file4 10\nblablabla" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "-- Create uiuiui-le-file: -"
+echo -e "CREATE uiuiui-le-file 22\nJust another content." | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Create file5: ------"
+echo -e "CREATE file5 4\nTo long content" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Create file1: ------"
+echo -e "CREATE file1 13\nfile1 again?" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+
+#List & read files
+echo -e "------- List files --------"
+echo "LIST" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------- Read file2: -------"
+echo "READ file2" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------- Read file1: -------"
+echo "READ file1" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "-- Read uiuiui-le-file: ---"
+echo "READ uiuiui-le-file" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+
+#Delete & Update (Semaphore per file)
+echo -e "------ Update file2 -------"
+echo -e "UPDATE file2 14\nUPDATED:trulu" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Update file1 -------"
+echo -e "UPDATE file1 13\nUPDATED:test" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------ Delete file4 -------"
+echo -e "DELETE file4" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "-- Delete uiuiui-le-file --"
+echo -e "DELETE uiuiui-le-file" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+
+#List & read files
+echo -e "------- List files --------"
+echo "LIST" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------- Read file2: -------"
+echo "READ file2" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "------- Read file1: -------"
+echo "READ file1" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+echo -e "-- Read uiuiui-le-file: ---"
+echo "READ uiuiui-le-file" | netcat $IP $PORT 2>&1
+echo -e "___________________________"
+
+
