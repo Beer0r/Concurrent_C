@@ -17,7 +17,9 @@ Danach kann der File Server gestartet werden.
 
 ## Tests
 Um die vorgefertigten Tests auszuführen, einfach das test (bash) Script ausführen:
+
 `$ ./test`
+
 Um die Semaphoren zu testen, einfach das test Script mehrfach parallel ausführen.
 Manuelle Tests können sehr einfach auf der Konsole ausgeführt werden.
 Das nachfolgende Beispiel zeigt vier manuelle Test-Ausführungen.
